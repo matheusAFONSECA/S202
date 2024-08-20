@@ -1,0 +1,22 @@
+{
+    "professor": "Dani Barude",
+    "assunto": "Física newtoniana",
+    "alunos": [
+        {
+            "nome": "Isadora Ribeiro",
+            "matricula": "1111"
+        },
+        {
+            "nome": "Gabriel Alves",
+            "matricula": "2222"
+        },
+        {
+            "nome": "Andre Silva",
+            "matricula": "3333"
+        },
+        {
+            "nome": "Cristovão Colombo",
+            "matricula": "4444"
+        }
+    ]
+}

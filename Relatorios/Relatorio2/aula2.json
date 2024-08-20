@@ -1,0 +1,22 @@
+{
+    "professor": "Chris",
+    "assunto": "Qualidade de software",
+    "alunos": [
+        {
+            "nome": "Gabriel Siqueira",
+            "matricula": "5555"
+        },
+        {
+            "nome": "Matheus Pereira",
+            "matricula": "5556"
+        },
+        {
+            "nome": "Davi Rosa",
+            "matricula": "5557"
+        },
+        {
+            "nome": "Ewel Felizardo",
+            "matricula": "5558"
+        }
+    ]
+}

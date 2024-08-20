@@ -1,0 +1,22 @@
+{
+    "professor": "Renan Sthel",
+    "assunto": "Probabilidade",
+    "alunos": [
+        {
+            "nome": "Virginia Afonso",
+            "matricula": "1000"
+        },
+        {
+            "nome": "Igor Gonçalves",
+            "matricula": "1001"
+        },
+        {
+            "nome": "Lucas Gadbem",
+            "matricula": "1002"
+        },
+        {
+            "nome": "Xico Sá",
+            "matricula": "1003"
+        }
+    ]
+}
