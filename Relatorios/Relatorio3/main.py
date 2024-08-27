@@ -1,5 +1,4 @@
 from database import Database
-from helper.writeAJson import writeAJson
 from pokedex import Pokedex
 
 # load the database
