@@ -1,0 +1,53 @@
+{
+    "nome": "Julia Eduarda de Cassia Fonseca",
+    "idade": 24,
+    "profissão": "Psicologa",
+    "parentescos": {
+        "irmãos": [
+            {
+                "nome": "Ana Silva",
+                "idade": 25,
+                "profissão": "Médica"
+            },
+            {
+                "nome": "Pedro Silva",
+                "idade": 28,
+                "profissão": "Arquiteto"
+            }
+        ],
+        "primos": [
+            {
+                "nome": "Mariana Souza",
+                "idade": 22,
+                "profissão": "Engenheira"
+            },
+            {
+                "nome": "Lucas Ferreira",
+                "idade": 20,
+                "profissão": "Estudante"
+            },
+            {
+                "nome": "Camila Costa",
+                "idade": 26,
+                "profissão": "Advogada"
+            }
+        ],
+        "tios": [
+            {
+                "nome": "Roberto Fonseca",
+                "idade": 50,
+                "profissão": "Empresário"
+            },
+            {
+                "nome": "Carla Fonseca",
+                "idade": 48,
+                "profissão": "Professora"
+            },
+            {
+                "nome": "Marta Fonseca",
+                "idade": 45,
+                "profissão": "Enfermeira"
+            }
+        ]
+    }
+}
