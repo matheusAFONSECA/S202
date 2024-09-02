@@ -3,78 +3,77 @@ import time
 import random
 from pymongo import MongoClient
 
-# Conexão com o MongoDB
+# MongoDB connection
 client = MongoClient("mongodb://localhost:27017/")
 db = client["bancoiot"]
 collection = db["sensores"]
 
-
-# Função para simular o sensor
-def simular_sensor(nome_sensor):
+# Function to simulate the sensor
+def simulate_sensor(sensor_name):
     """
-    Simula o funcionamento de um sensor de temperatura em uma rede IoT.
+    Simulates the operation of a temperature sensor in an IoT network.
 
-    Esta função gera leituras de temperatura aleatórias para um sensor específico e as armazena
-    em um banco de dados MongoDB. Se a temperatura gerada for superior a 38°C, o sensor é marcado 
-    como 'alarmado' e uma mensagem de alerta é exibida. Uma vez alarmado, o sensor não gera mais 
-    leituras de temperatura.
+    This function generates random temperature readings for a specific sensor and stores them
+    in a MongoDB database. If the generated temperature exceeds 38°C, the sensor is marked as
+    'alarmed' and an alert message is displayed. Once alarmed, the sensor no longer generates 
+    temperature readings.
 
     Args:
-        nome_sensor (str): O nome do sensor, usado como identificador no MongoDB.
+        sensor_name (str): The name of the sensor, used as an identifier in MongoDB.
 
-    Retorna:
+    Returns:
         None
     """
 
-    # Documento inicial do sensor no MongoDB
+    # Initial sensor document in MongoDB
     sensor_document = {
-        "nomeSensor": nome_sensor,
+        "nomeSensor": sensor_name,
         "valorSensor": 0,
         "unidadeMedida": "C°",
         "sensorAlarmado": False,
     }
-    # Inserir o documento inicial no MongoDB
+    # Insert the initial document into MongoDB
     collection.insert_one(sensor_document)
 
     while True:
-        # Buscar o documento do sensor no MongoDB
-        sensor = collection.find_one({"nomeSensor": nome_sensor})
+        # Fetch the sensor document from MongoDB
+        sensor = collection.find_one({"nomeSensor": sensor_name})
 
         if sensor["sensorAlarmado"]:
-            print(f"Atenção! Temperatura muito alta! Verificar Sensor {nome_sensor}!")
+            print(f"Atenção! Temperatura muito alta! Verificar Sensor {sensor_name}!")
             break
 
-        # Gerar um valor de temperatura aleatório entre 30 e 40
-        temperatura = random.uniform(30, 40)
-        print(f"Sensor {nome_sensor} - Temperatura: {temperatura:.2f} C°")
+        # Generate a random temperature value between 30 and 40
+        temperature = random.uniform(30, 40)
+        print(f"Sensor {sensor_name} - Temperatura: {temperature:.2f} C°")
 
-        # Atualizar o documento no MongoDB com a nova temperatura
+        # Update the document in MongoDB with the new temperature
         collection.update_one(
-            {"nomeSensor": nome_sensor}, {"$set": {"valorSensor": temperatura}}
+            {"nomeSensor": sensor_name}, {"$set": {"valorSensor": temperature}}
         )
 
-        # Verificar se a temperatura é superior a 38 C° e atualizar o status de alarmado
-        if temperatura > 38:
+        # Check if the temperature is higher than 38°C and update the alarm status
+        if temperature > 38:
             collection.update_one(
-                {"nomeSensor": nome_sensor}, {"$set": {"sensorAlarmado": True}}
+                {"nomeSensor": sensor_name}, {"$set": {"sensorAlarmado": True}}
             )
 
-        # Espera de 2 segundos antes da próxima leitura
+        # Wait for 2 seconds before the next reading
         time.sleep(2)
 
 
-# Função principal para criar e iniciar threads
+# Main function to create and start threads
 if __name__ == "__main__":
-    # Lista de sensores
-    sensores = ["Temp1", "Temp2", "Temp3"]
+    # List of sensors
+    sensors = ["Temp1", "Temp2", "Temp3"]
     threads = []
 
-    # Criar e iniciar uma thread para cada sensor
-    for sensor in sensores:
-        thread = threading.Thread(target=simular_sensor, args=(sensor,))
+    # Create and start a thread for each sensor
+    for sensor in sensors:
+        thread = threading.Thread(target=simulate_sensor, args=(sensor,))
         thread.start()
         threads.append(thread)
 
-    # Aguardar que todas as threads sejam finalizadas
+    # Wait for all threads to complete
     for thread in threads:
         thread.join()
