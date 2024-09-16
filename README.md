@@ -5,7 +5,6 @@
 - [Introduction](#introduction)
 - [Evaluative Exercises Folder](#evaluative-exercises-folder)
 - [Reports Folder](#reports-folder)
-- [Scripts Folder](#scripts-folder)
 - [Theory Folder](#theory-folder)
 
 ## Introduction
