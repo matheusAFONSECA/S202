@@ -1,18 +1,25 @@
 # S202
 
-## Índice
+## Index
 
-- [Introdução](#introdução)
-- [Pasta Relatórios](#pasta-relatórios)
-- [Pasta Teoria](#pasta-teoria)
+- [Introduction](#introduction)
+- [Evaluative Exercises Folder](#evaluative-exercises-folder)
+- [Reports Folder](#reports-folder)
+- [Scripts Folder](#scripts-folder)
+- [Theory Folder](#theory-folder)
 
-## Introdução
+## Introduction
 
-Este repositório contém os códigos desenvolvidos durante a disciplina de Banco de Dados 2 no Instituto Nacional de Telecomunicações (INATEL). O objetivo principal é armazenar e organizar os códigos criados ao longo das sessões de laboratório da disciplina.
+This repository contains the code developed during the Database 2 course at the National Institute of Telecommunications (INATEL). The main objective is to store and organize the code created during the laboratory sessions of the course.
 
-## Pasta Relatórios
+## Evaluative Exercises Folder
 
-A pasta "Relatórios" é dedicada ao armazenamento dos códigos desenvolvidos durante as sessões de laboratório, proporcionando um local centralizado para o acesso e organização desses materiais.
+The "Evaluative Exercises" folder contains the code developed during evaluation exercises and practical assessments, providing a structured place for organizing those tasks.
 
-## Pasta Teoria
-A pasta "Teoria" é dedicada ao armazenamento dos códigos desenvolvidos durante as atividades propostas durante as aulas de teoria para a fixação do conteúdo ministrado.
+## Reports Folder
+
+The "Reports" folder is dedicated to storing the code developed during the lab sessions, providing a centralized location for accessing and organizing these materials.
+
+## Theory Folder
+
+The "Theory" folder is dedicated to storing the code developed during theoretical lessons, helping to reinforce the content taught in class.
