@@ -102,17 +102,18 @@ class MotoristaCLI(SimpleCLI):
             ValueError: If the number of rides is less than 1.
         """
         notafinal = 0
-        nome = input("Digite o nome do passageiro: ")
-        documento = input("Digite o documento do passageiro: ")
+        print("Tarefa de create inicializada...")
+        nome = input("Nome do passageiro: ")
+        documento = input("Documento do passageiro: ")
         passageiro = Passageiro(nome, documento)
 
         corridas = []
-        numeroCorridas = int(input("Digite o número de corridas? Maior ou igual a 1: "))
+        numeroCorridas = int(input("Quantidade de corridas(>=1): "))
         for i in range(numeroCorridas):
-            nota = float(input("Digite a nota da corrida: "))
+            nota = float(input("Nota da corrida: "))
             notafinal += nota
-            distancia = float(input("Digite a distância percorrida: "))
-            valor = float(input("Digite o valor da corrida: "))
+            distancia = float(input("Distância percorrida: "))
+            valor = float(input("Valor da corrida: "))
             corrida = Corrida(nota, distancia, valor, passageiro.dict())
             corridas.append(vars(corrida))
 
@@ -147,17 +148,18 @@ class MotoristaCLI(SimpleCLI):
         id = str(input("Entre com o id: "))
         motorista = self.motorista_Dao.read(id)
 
+        print("Tarefa de update inicializada...")
         if motorista:
-            nome = input("Digite o nome do passageiro: ")
-            documento = input("Digite o documento do passageiro: ")
+            nome = input("Nome do passageiro: ")
+            documento = input("Documento do passageiro: ")
             passageiro = Passageiro(nome, documento)
 
             novas_corridas = []
-            numeroCorridas = int(input("Digite o número de novas corridas: "))
+            numeroCorridas = int(input("Número de novas corridas(>=1): "))
             for i in range(numeroCorridas):
-                nota = float(input("Digite a nota da corrida: "))
-                distancia = float(input("Digite a distância percorrida: "))
-                valor = float(input("Digite o valor da corrida: "))
+                nota = float(input("Nota da corrida: "))
+                distancia = float(input("Distância percorrida: "))
+                valor = float(input("Valor da corrida: "))
                 corrida = Corrida(nota, distancia, valor, passageiro.dict())
                 novas_corridas.append(vars(corrida))
 
@@ -167,6 +169,22 @@ class MotoristaCLI(SimpleCLI):
             print("Motorista não encontrado...")
 
     def read(self):
+        """
+        Reads and displays information about a motorista (driver) based on the provided ID.
+
+        Prompts the user to input an ID, retrieves the motorista data from the motorista_Dao,
+        and prints the details of the motorista and their associated corridas (rides).
+
+        If the motorista is found, it prints:
+        - The final score of the motorista.
+        - Details of each corrida, including the score, distance, value, and passenger information.
+
+        If the motorista is not found, it prints a "Not found" message.
+
+        Returns:
+            None
+        """
+        print("Tarefa de read inicializada...")
         id = str(input("Entre com o id: "))
         motorista = self.motorista_Dao.read(id)
         # imprimindo as corridas
