@@ -22,3 +22,7 @@ The "Reports" folder is dedicated to storing the code developed during the lab s
 ## Theory Folder
 
 The "Theory" folder is dedicated to storing the code developed during theoretical lessons, helping to reinforce the content taught in class.
+
+## Author
+
+- [Matheus Fonseca](https://github.com/matheusAFONSECA)
