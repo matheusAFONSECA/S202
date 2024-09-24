@@ -1,0 +1,58 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": ["_id", "corridas", "nota"],
+      "properties": {
+        "_id": {
+          "bsonType": "objectId"
+        },
+        "corridas": {
+          "bsonType": "array",
+          "minItems": 1,
+          "items": {
+            "bsonType": "object",
+            "required": ["nota", "distancia", "valor", "passageiro"],
+            "properties": {
+              "nota": {
+                "bsonType": "double",
+                "description": "Must be a Double",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "distancia": {
+                "bsonType": "double",
+                "description": "Must be a Double",
+                "minimum": 1
+              },
+              "valor": {
+                "bsonType": "double",
+                "description": "Must be a Double",
+                "minimum": 0
+              },
+              "passageiro": {
+                "bsonType": "object",
+                "required": ["nome", "documento"],
+                "properties": {
+                  "nome": {
+                    "bsonType": "string",
+                    "description": "Must be a String"
+                  },
+                  "documento": {
+                    "bsonType": "string",
+                    "description": "Must be a String"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "nota": {
+          "bsonType": "double",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Must be a Double (final average)"
+        }
+      }
+    }
+  }
+  
