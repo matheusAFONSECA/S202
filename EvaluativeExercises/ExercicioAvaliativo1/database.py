@@ -7,10 +7,11 @@ class Database:
 
     def connect(self, database, collection):
         try:
-            connectionString = "mongodb+srv://root:RCe_espcZW8mr_x@cluster0.f1frh.mongodb.net/"
+            connectionString = (
+                "mongodb+srv://root:RCe_espcZW8mr_x@cluster0.f1frh.mongodb.net/"
+            )
             self.clusterConnection = pymongo.MongoClient(
-                connectionString,
-                tlsAllowInvalidCertificates=True
+                connectionString, tlsAllowInvalidCertificates=True
             )
             self.db = self.clusterConnection[database]
             self.collection = self.db[collection]
@@ -19,7 +20,7 @@ class Database:
             print(e)
 
     def resetDatabase(self):
-        try: 
+        try:
             self.db.drop_collection(self.collection)
             print("Banco de dados resetado com sucesso!")
         except Exception as e:
