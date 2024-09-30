@@ -1,11 +1,14 @@
 # S202
 
+Repository dedicated to the code developed during the S202 - Database 2 - course at the National Institute of Telecommunications (INATEL).
+
 ## Index
 
 - [Introduction](#introduction)
 - [Evaluative Exercises Folder](#evaluative-exercises-folder)
 - [Reports Folder](#reports-folder)
 - [Theory Folder](#theory-folder)
+- [Author](#author)
 
 ## Introduction
 
@@ -25,4 +28,6 @@ The "Theory" folder is dedicated to storing the code developed during theoretica
 
 ## Author
 
-- [Matheus Fonseca](https://github.com/matheusAFONSECA)
+### [Matheus Fonseca](https://github.com/matheusAFONSECA)
+
+Undergraduate student in the eighth (8th) semester of Computer Engineering at the National Institute of Telecommunications (Inatel). I participated in a Scientific Initiation at the Cybersecurity and Internet of Things Laboratory (CS&ILAB), where, in the Park Here project, I developed skills in computer vision applied to parking systems, focusing on license plate recognition and vehicle identification. Additionally, I served as a teaching assistant for Physics 1, 2, and 3, helping with practical classes, report writing, and answering theoretical questions. Currently, I am an intern at the Inatel Competence Center (ICC) in the PDI SW department.
