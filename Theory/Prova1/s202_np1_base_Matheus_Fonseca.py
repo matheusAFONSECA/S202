@@ -158,7 +158,7 @@ class CharacterDAO:
             )
 
     def get_knowledge(self, character_name):
-        result = self.neo4j_driver.execute_query(
+        results = self.neo4j_driver.execute_query(
             """
             MATCH (character:Character {name: $character_name})-[:WORK_AS|:CULTURE_RELATED]->(profession_or_culture)
             MATCH (page:Page)-[:RELATED_TO]->(profession_or_culture)
@@ -166,7 +166,7 @@ class CharacterDAO:
             """,
             {"character_name": character_name},
         )
-        return list(result)
+        return [result for result in results]
 
 
 item_dao = ItemDAO()
