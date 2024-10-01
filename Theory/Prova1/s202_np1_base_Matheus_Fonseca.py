@@ -100,7 +100,7 @@ class ItemDAO:
             {"$project": {"_id": 0, "name": 1, "price": 1}},
         ]
         result = self.mongo_collection.aggregate(pipeline)
-        return list(result)     # return the result of the query in format of list
+        return list(result)
 
 
 class PageDAO:
@@ -113,6 +113,17 @@ class PageDAO:
             page.to_dict(),
         )
 
+        # making the relationship between the page and the characteristics
+        for characteristic in page.characteristics:
+            self.neo4j_driver.execute_query(
+                """
+                MATCH (page:Page {title: $title})
+                MERGE (characteristic:Characteristic {name: $characteristic})
+                MERGE (page)-[:RELATED_TO]->(characteristic)
+                """,
+                {"title": page.title, "characteristic": characteristic},
+            )
+
 
 class CharacterDAO:
     def __init__(self) -> None:
@@ -124,8 +135,38 @@ class CharacterDAO:
             character.to_dict(),
         )
 
+        # making the relationship between the character and the profession
+        for profession in character.profession:
+            self.neo4j_driver.execute_query(
+                """
+                MATCH (character:Character {name: $name})
+                MERGE (profession:Profession {name: $profession})
+                MERGE (character)-[:WORK_AS]->(profession)
+                """,
+                {"name": character.name, "profession": profession},
+            )
+
+        # making the relationship between the character and the culture
+        for culture in character.culture:
+            self.neo4j_driver.execute_query(
+                """
+                MATCH (character:Character {name: $name})
+                MERGE (culture:Culture {name: $culture})
+                MERGE (character)-[:CULTURE_RELATED]->(culture)
+                """,
+                {"name": character.name, "culture": culture},
+            )
+
     def get_knowledge(self, character_name):
-        pass  # ---------------------------------------------------------------------Questão 2
+        result = self.neo4j_driver.execute_query(
+            """
+            MATCH (character:Character {name: $character_name})-[:WORK_AS|:CULTURE_RELATED]->(profession_or_culture)
+            MATCH (page:Page)-[:RELATED_TO]->(profession_or_culture)
+            RETURN page.title AS title, page.description AS description
+            """,
+            {"character_name": character_name},
+        )
+        return list(result)
 
 
 item_dao = ItemDAO()
