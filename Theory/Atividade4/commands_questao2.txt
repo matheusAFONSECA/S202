@@ -1,0 +1,17 @@
+-- 1
+SELECT * FROM montadora.estoque WHERE nome = 'Pistao' ALLOW FILTERING;
+
+-- 3
+DESCRIBE TABLE montadora.estoque;
+
+-- 4
+SELECT MAX(quantidade) AS "maior quantidade", MIN(quantidade) AS "menor quantidade" FROM montadora.estoque ALLOW FILTERING;
+
+-- 5
+SELECT nome, carro, quantidade FROM montadora.estoque WHERE estante = 3 ALLOW FILTERING;
+
+-- 6
+SELECT AVG(quantidade) FROM montadora.estoque WHERE nivel = 1 ALLOW FILTERING;
+
+-- 7
+SELECT * FROM montadora.estoque WHERE estante < 3 AND nivel > 4 ALLOW FILTERING;
