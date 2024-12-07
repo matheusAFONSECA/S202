@@ -5,26 +5,44 @@ Repository dedicated to the code developed during the S202 - Database 2 - course
 ## Index
 
 - [Introduction](#introduction)
-- [Evaluative Exercises Folder](#evaluative-exercises-folder)
-- [Reports Folder](#reports-folder)
+- [Laboratory Folder](#laboratory-folder)
+  - [Evaluative Exercises](#evaluative-exercises)
+  - [Reports](#reports)
 - [Theory Folder](#theory-folder)
+  - [Activities](#activities)
+  - [Provas](#provas)
 - [Author](#author)
 
 ## Introduction
 
-This repository contains the code developed during the Database 2 course at the National Institute of Telecommunications (INATEL). The main objective is to store and organize the code created during the laboratory sessions of the course.
+This repository contains the code and materials developed during the Database 2 course at the National Institute of Telecommunications (INATEL). The main objective is to organize the content created during laboratory and theoretical sessions, as well as evaluation exercises.
 
-## Evaluative Exercises Folder
+## Laboratory Folder
 
-The "Evaluative Exercises" folder contains the code developed during evaluation exercises and practical assessments, providing a structured place for organizing those tasks.
+The `Laboratory` folder contains resources and materials used and created during practical laboratory sessions.
 
-## Reports Folder
+### Evaluative Exercises
 
-The "Reports" folder is dedicated to storing the code developed during the lab sessions, providing a centralized location for accessing and organizing these materials.
+The `EvaluativeExercises` folder includes code and materials developed for evaluative exercises and practical assessments. Each exercise is organized in subfolders such as:
+
+- `ExercicioAvaliativo1`: Contains materials and code for the first evaluative exercise.
+- `ExercicioAvaliativo2`: Contains materials and code for the second evaluative exercise.
+
+### Reports
+
+The `Reports` folder is used to store reports and materials generated during lab sessions, providing centralized access to all documentation.
 
 ## Theory Folder
 
-The "Theory" folder is dedicated to storing the code developed during theoretical lessons, helping to reinforce the content taught in class.
+The `Theory` folder contains code and resources developed during theoretical classes.
+
+### Activities
+
+The `Activities` folder includes exercises and code developed during lessons to deepen the understanding of theoretical content.
+
+### Provas
+
+The `Provas` folder is dedicated to organizing exams and related materials.
 
 ## Author
 
